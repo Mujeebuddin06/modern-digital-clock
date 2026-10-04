@@ -1,0 +1,65 @@
+:root {
+  --bg-top: #2b1055;
+  --bg-mid: #4a1d6e;
+  --bg-bottom: #12082b;
+  --glow: rgba(255, 120, 150, 0.28);
+  --digits: #00fff5;
+  --accent: #ff4d8d;
+  --text: #ece6f5;
+  --font-display: "Orbitron", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  font-family: var(--font-body);
+  color: var(--text);
+  background:
+    radial-gradient(60rem 40rem at 50% 105%, var(--glow), transparent 70%),
+    linear-gradient(160deg, var(--bg-top), var(--bg-mid) 45%, var(--bg-bottom));
+  background-attachment: fixed;
+}
+
+.clock {
+  padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1.5rem, 6vw, 3.75rem);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.clock__date {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.clock__time {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.3rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 10vw, 4.5rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--digits);
+  text-shadow: 0 0 20px rgba(0, 255, 245, 0.5), 0 0 40px rgba(0, 255, 245, 0.2);
+}
+
+.clock__period {
+  margin-left: 0.6rem;
+  font-size: 0.33em;
+  font-weight: 500;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(255, 77, 141, 0.5);
+}
